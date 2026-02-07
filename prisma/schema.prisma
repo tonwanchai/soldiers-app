@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 2. กำหนดการเชื่อมต่อ SQLite (ต้องระบุ url)
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// 3. สร้างตารางเก็บข้อมูลทหารตามที่คุณต้องการ
+model Soldier {
+  id           Int      @id @default(autoincrement())
+  fullName     String
+  batch        String
+  department   String   // สายงานดั้งเดิม (เช่น กองร้อย, บก., ช่าง)
+  status       String   @default("ปกติ") // ยอดจำหน่ายปัจจุบัน (เช่น กรก.เทิด, เวรปืน, ลา)
+}

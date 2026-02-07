@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "Soldier" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "fullName" TEXT NOT NULL,
+    "batch" TEXT NOT NULL,
+    "department" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
